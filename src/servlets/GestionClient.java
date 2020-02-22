@@ -12,11 +12,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import beans.Client;
+import beans.Utilisateur;
 import dao.ClientDao;
 import dao.DaoException;
 import metier.forms.AjoutUtilisateurForm;
+import metier.forms.AuthenticationForm;
 
 /**
  * Servlet implementation class AjoutUtilisateur
@@ -46,6 +49,7 @@ public class GestionClient extends HttpServlet
 		}
 		else if (requestedUrl.endsWith("/clients/list"))
 		{
+			HttpSession session = request.getSession();
 			try {
 				request.setAttribute("clients", ClientDao.getList());
 			} catch (DaoException e) {
@@ -54,6 +58,7 @@ public class GestionClient extends HttpServlet
 			}
 			getServletContext().getRequestDispatcher(VUE_LIST_CLIENT)
 					.forward(request, response);
+			
 		}
 		else if (requestedUrl.endsWith("/clients/update"))
 		{

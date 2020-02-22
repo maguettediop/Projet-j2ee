@@ -10,8 +10,11 @@
 
 </head>
 <body>
+
 	<c:import url="inc/entete.jsp"/>
 	<c:import url="inc/menu.jsp"/>
+
+	
 	<c:choose>
 		<c:when test="${ empty clients }">
 			<p>La liste des utilisateurs est vide</p>

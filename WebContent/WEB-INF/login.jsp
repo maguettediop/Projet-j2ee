@@ -18,7 +18,7 @@
 			<input class="form-control" type="text" name="login">
 			<label>Password</label>
 			<input class="form-control" type="password" name="password">
-			<input type="submit" value="Se connecter">
+			<input class="" type="submit" value="Se connecter">
 		</fieldset>
 	</form>
 	</div>
